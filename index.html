@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./index.js"></script>
+</head>
+
+<body>
+    <h1 id="kaka"></h1>
+    <input type="text" id="input">
+    <div id="vale" style="width: 100px; height: 100px; color: blue; text-align: center; font-size: 30px; margin-left: 40%;">
+
+    </div>
+
+    <script>
+        // let num = 1;
+        // var k = document.getElementById('kaka') //获取dom元素
+        // var b = document.getElementById('vale')
+        // var i = document.getElementById('input')
+        // k.innerText = name; //改变dom元素的内容。innerHtml还可以赋值标签。  这里的name来源于引入的index.js
+
+
+
+        // function adds() {
+
+        //     b.innerText = num++; // 如果不是双向绑定，那么这里就是错误的。 这里也不同于vue。
+
+        // }
+        // i.oninput = adds;
+        //两种dom绑定原生事件的方式。 不同于vue的地方。
+        // i.addEventListener("oninput", adds)
+
+
+        //原生防抖 定时器
+        // function debounce(func, wait) {
+        //     let timeout;
+        //     return function() {
+        //         if (timeout) clearTimeout(timeout);
+        //         timeout = setTimeout(() => {
+        //             func.apply()
+        //             console.log('amd yes'); //防抖成功时
+        //         }, wait)
+        //     }
+        // }
+        // i.oninput = debounce(adds, 1000);
+
+        //原生节流 利用时间戳
+        // function throttle(func, wait) {
+        //     var time = 0; //2s内只允许调用func一次。            
+
+        //     return function() {
+        //         var now = Date.now();
+        //         if (now - time > wait) {
+        //             func.apply()
+        //             time = now;
+        //             console.log('amd yes!');
+        //         }
+        //     }
+
+        // }
+        // i.oninput = throttle(adds, 1000);
+
+        // 原生节流 利用定时器
+        function throttle(func, wait) {
+            let timeout;
+            return function() {
+                if (!timeout)
+                    timeout = setTimeout(() => {
+                        func.apply();
+                        timeout = null;
+                    }, wait)
+            }
+        }
+
+        i.oninput = throttle(adds, 1000)
+
+        // function log() {
+        //     console.log('aaaaa');
+        //     var a = 2;
+
+        //     return function(s) {
+        //         if (a != s) {
+        //             console.log('of course');
+
+        //         }
+        //     }
+        // }
+        // log()(3); //这种函数后面两个括号表示先执行外层函数，再执行内层函数。三个括号也类似，由外向里依次执行（记得里面的函数，reterun的必须直接是函数，或者函数名）。
+        
+        console.log(a);
+        function s(a) {
+            console.log(a);
+        }
+        var a = 10;
+        
+    
+        
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+
+
+
+</html>
